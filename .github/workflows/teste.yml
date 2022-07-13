@@ -1,4 +1,4 @@
-name: .NET
+name: teste
 
 on:
   workflow_dispatch:
@@ -25,7 +25,7 @@ jobs:
   deploy-dev:
     name: Deploy Desenvolvimento
     runs-on: ubuntu-latest
-    environment: dev
+    environment: desenv
     needs: [build]
     steps:
     
