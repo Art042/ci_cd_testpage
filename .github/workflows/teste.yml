@@ -6,7 +6,7 @@ on:
 jobs:
   build:
 
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
 
     steps:
     - uses: actions/checkout@v2
@@ -24,10 +24,30 @@ jobs:
 
   deploy-dev:
     name: Deploy Desenvolvimento
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
     environment: desenv
     needs: [build]
     steps:
     
     - name: Teste
-      run: echo 'Deploy Dev'
+      run: echo 'Teste Deploy Desenv'
+      
+  deploy-hlmg:
+    name: Deploy Homologacao
+    runs-on: windows-latest
+    environment: hmlg
+    needs: [deploy-dev]
+    steps:
+    
+    - name: Teste2
+      run: echo 'Teste Deploy Homologacao'
+      
+  deploy-prod:
+    name: Deploy Producao
+    runs-on: windows-latest
+    environment: prod
+    needs: [deploy-hlmg]
+    steps:
+    
+    - name: Teste3
+      run: echo 'Teste Deploy Producao'
