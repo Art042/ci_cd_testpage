@@ -49,7 +49,7 @@ jobs:
       run: echo 'Teste Deploy Homologacao'
       
   deploy-prod:
-    name: Deploy Producao
+    name: Deploy Produçao
     runs-on: windows-latest
     environment: prod
     needs: [deploy-hlmg]
